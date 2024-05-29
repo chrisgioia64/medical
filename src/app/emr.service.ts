@@ -12,7 +12,7 @@ export class EmrService {
   private promptText = "Convert the following text to json format with fields for Name, Age, Gender, "
     + "Causes, Symptoms, Diagnostics, Treatment, Preventative Measures, and Next Steps"
 
-  private apiKey = "sk-proj-RzShknq91EgR7hS1Mjw0T3BlbkFJKlxCJycmw3dCzilOuZOX";
+  private apiKey = "";
 
   private apiUrl = 'https://api.openai.com/v1/chat/completions';
 
