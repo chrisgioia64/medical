@@ -1,0 +1,58 @@
+
+<div id="input-div">
+  <p>Enter the transcription here.</p>
+  <form [formGroup]="formGroup">
+    <textarea class="form-control" rows="10" cols="80" formControlName="textArea">
+    </textarea>
+    <br>
+    <input id="generateButton" type="button" class="btn btn-primary" (click)="generateText()" value="Generate EMR">
+  </form>
+</div>
+<div id="results_table" class="table">
+  <table>
+    <thead>
+      <tr>
+        <td class="col_attr"><b>Entity</b></td>
+        <td class="col_val"><b>Value</b></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col_attr">Name</td>
+        <td class="col_val">{{name}}</td>
+      </tr>
+      <tr>
+        <td class="col_attr">Age</td>
+        <td class="col_val">{{age}}</td>
+      </tr>
+      <tr>
+        <td class="col_attr">Gender</td>
+        <td class="col_val">{{gender}}</td>
+      </tr>
+      <tr>
+        <td class="col_attr">Causes</td>
+        <td class="col_val">{{causes}}</td>
+      </tr>
+      <tr>
+        <td class="col_attr">Symptoms</td>
+        <td class="col_val">{{symptoms}}</td>
+      </tr>
+      <tr>
+        <td class="col_attr">Diagnostics</td>
+        <td class="col_val">{{diagnostics}}</td>
+      </tr>
+      <tr>
+        <td class="col_attr">Treatment</td>
+        <td class="col_val">{{treatment}}</td>
+      </tr>
+      <tr>
+        <td class="col_attr">Preventative Measures</td>
+        <td class="col_val">{{preventative_measures}}</td>
+      </tr>
+      <tr>
+        <td class="col_attr">Next Steps</td>
+        <td class="col_val">{{next_steps}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
