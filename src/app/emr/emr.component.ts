@@ -29,6 +29,8 @@ export class EmrComponent implements OnInit {
   treatment : string = "";
   preventative_measures : string = "";
   next_steps : string = "";
+  showTable = false;
+
 
   constructor(private emrService : EmrService) {
     this.formGroup = new FormGroup({
@@ -49,6 +51,7 @@ export class EmrComponent implements OnInit {
     // console.log("text: " + textArea!.value);
     let observable2 = this.emrService.generateText(textArea!.value);
     observable2.subscribe( (response : any) => {
+      this.showTable = true;
       let message = response.choices[0].message.content;
       const jsonObject = JSON.parse(message);
       console.log(jsonObject);

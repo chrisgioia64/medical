@@ -8,7 +8,7 @@
     <input id="generateButton" type="button" class="btn btn-primary" (click)="generateText()" value="Generate EMR">
   </form>
 </div>
-<div id="results_table" class="table">
+<div *ngIf="showTable" id="results_table" class="table">
   <table>
     <thead>
       <tr>
