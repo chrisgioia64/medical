@@ -1,15 +1,47 @@
 
-<div id="input-div">
-  <p>Enter the transcription here.</p>
-  <form [formGroup]="formGroup">
-    <textarea class="form-control" rows="10" cols="80" formControlName="textArea">
-    </textarea>
-    <br>
-    <input id="generateButton" type="button" class="btn btn-primary" (click)="generateText()" value="Generate EMR">
-  </form>
-</div>
-<div *ngIf="showTable" id="results_table" class="table">
-  <table>
+<mat-card id="input-div">
+  <h1>Electronic Medical Records</h1>
+  <mat-card-content>
+    <form [formGroup]="formGroup">
+      <!-- <textarea class="form-control" rows="10" cols="80" formControlName="textArea">
+      </textarea>
+      <br> -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter medical transcription</mat-label>
+        <textarea rows="6" class="my-textarea" matInput placeholder="" formControlName="textArea"></textarea>
+      </mat-form-field>
+
+      <button id="generateButton" mat-button (click)="generateText()">Generate EMR</button>
+      <div class="mat-spinner-div">
+        <mat-spinner *ngIf="showSpinner" [diameter]="30"></mat-spinner>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="showTable" id="results_table" class="table">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="entity">
+      <th mat-header-cell *matHeaderCellDef>Entity</th>
+      <td mat-cell *matCellDef="let element"> {{element.entity}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef>Value</th>
+      <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- <table>
     <thead>
       <tr>
         <td class="col_attr"><b>Entity</b></td>
@@ -54,5 +86,5 @@
         <td class="col_val">{{next_steps}}</td>
       </tr>
     </tbody>
-  </table>
-</div>
+  </table> -->
+</mat-card>

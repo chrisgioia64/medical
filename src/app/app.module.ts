@@ -9,6 +9,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
+import { MatCardModule } from "@angular/material/card";
+import { MatInputModule } from "@angular/material/input";
+import { MatButtonModule } from "@angular/material/button";
+import { MatProgressBarModule, ProgressBarMode } from "@angular/material/progress-bar";
+import { MatDivider, MatDividerModule } from "@angular/material/divider";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
+import { MatMenuModule } from "@angular/material/menu";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,10 +30,21 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    EmrComponent
+    EmrComponent,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MatDivider,
+    MatDividerModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
