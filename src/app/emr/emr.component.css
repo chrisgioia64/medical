@@ -7,6 +7,8 @@
   padding: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 0.5em;
 }
 
 #input-div h1 {
@@ -14,12 +16,13 @@
 }
 
 #results_table {
-  /* border: 1px solid rgb(200, 200, 200); */
   width: 700px;
   margin-left: auto;
   margin-right: auto;
   background-color: rgb(250, 250, 250);
   padding: 10px;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 0.5em;
 }
 
 #generateButton {
@@ -38,9 +41,10 @@
 
 
 
-button {
+#input-div button {
   background-color: lightskyblue;
   border-radius: 25px;
+  margin-top: 20px;
 }
 
 .example-full-width {
@@ -56,4 +60,11 @@ mat-spinner {
 .mat-spinner-div {
   margin-top: 10px;
   height: 35px;
+}
+
+.spinner-border {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  /* border: 1px solid black; */
 }
